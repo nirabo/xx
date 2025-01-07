@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xx-cli"
+version = "0.1.0"
+description = "An intelligent command-line assistant that helps users execute complex commands"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = ["cli", "assistant", "llm", "command-line"]
+authors = [
+    { name = "Lyuboslav Petrov", email = "petrov.lyuboslav@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "openai",
+    "anthropic",
+    "ollama",
+    "python-dotenv",
+    "typer",
+    "rich",
+    "pydantic",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/nirabo/xx"
+Repository = "https://github.com/nirabo/xx.git"
+Documentation = "https://github.com/nirabo/xx/docs"
+"Bug Tracker" = "https://github.com/nirabo/xx/issues"
+
+[project.scripts]
+xx = "xx.cli.main:app"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
